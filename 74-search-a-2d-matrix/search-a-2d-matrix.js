@@ -4,12 +4,12 @@
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-    for(let i of matrix){
-        for(let j of i){
-            if(j===target){
-                return true;
+    let x=false;
+    matrix.forEach((row,rIndex)=>{
+        row.forEach((col,colIndex)=>{
+            if(col===target) x=true;
             }
-        }
-    }
-    return false;
+            )
+    })
+    return x;
 };
