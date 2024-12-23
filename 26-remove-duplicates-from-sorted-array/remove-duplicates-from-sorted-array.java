@@ -6,9 +6,7 @@ class Solution {
             if(a[j]!=a[j+1]){
                 a[i++]=a[j];
             }
-            System.out.println(a[i]+" "+i);
         }
-        System.out.println(i);
         a[i++]=a[n-1];
     
         return i;
