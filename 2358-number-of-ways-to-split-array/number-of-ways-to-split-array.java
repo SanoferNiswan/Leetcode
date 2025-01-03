@@ -9,8 +9,8 @@ class Solution {
         int count = 0 ;
         for(int i = 0 ; i< nums.length-1 ; i++){
             left+=nums[i];
-            long right = sum - left;
-            if(left>=right){
+            sum = sum - nums[i];
+            if(left>=sum){
                 count++;
             }
         }
