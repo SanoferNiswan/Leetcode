@@ -6,7 +6,7 @@ class Solution {
         
         // Left to right pass
         for (int i = 0; i < n; i++) {
-            ans[i] += ops;
+            ans[i] = ops;
             count += boxes.charAt(i) == '1' ? 1 : 0;
             ops += count;
         }
