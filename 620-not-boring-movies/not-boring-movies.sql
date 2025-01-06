@@ -1,4 +1,1 @@
-select * from Cinema 
-where Mod(id,2) != 0 
-and description != 'boring'
-order by rating desc;
+select * from Cinema where Mod(id,2) != 0 and description != 'boring' order by rating desc;
