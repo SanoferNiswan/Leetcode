@@ -4,8 +4,6 @@
  * @return {number[]}
  */
 var map = function(arr, fn) {
-    for(let i = 0 ; i < arr.length ; i++){
-        arr[i] = fn(arr[i],i);
-    }
+    arr=arr.map((a,indx)=>fn(a,indx))
     return arr;
 };
