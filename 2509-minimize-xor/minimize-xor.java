@@ -1,20 +1,16 @@
 class Solution {
     public int minimizeXor(int num1, int num2) {
-        int bitCount = Integer.bitCount(num2);
-        bitCount -= Integer.bitCount(num1);
-        int cur = 1;
-
-        while (bitCount != 0) {
-            if (bitCount < 0 && (num1 & cur) != 0) {
-                num1 ^= cur;
-                bitCount++;
-            } else if (bitCount > 0 && (num1 & cur) == 0) {
-                num1 |= cur;
-                bitCount--;
+     int setBitsInNum2 = Integer.bitCount(num2);
+        int currentSetBits = Integer.bitCount(num1);
+        while (currentSetBits != setBitsInNum2) {
+            if (currentSetBits < setBitsInNum2) {
+                num1++;
+            } else {
+                num1--;
             }
-            cur <<= 1;
+            currentSetBits = Integer.bitCount(num1);
         }
-
+        
         return num1;
     }
 }
