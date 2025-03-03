@@ -4,17 +4,16 @@
  * @return {number[]}
  */
 var pivotArray = function(nums, pivot) {
-    let left=[],right=[];
-    for(let i = 0 ; i < nums.length ; i++){
-        if(nums[i] < pivot){
-            left.push(nums[i]);
-        }else if(nums[i]>pivot){
-            right.push(nums[i])
-        }else right.unshift(nums[i]);
+    let result = new Array(nums.length).fill(0);
+    let left = 0, right = nums.length-1;
+    for(let i = 0,j=nums.length-1 ; i < nums.length ; i++,j--){
+        if(nums[i]<pivot){
+            result[left++]=nums[i];
+        }
+        if(nums[j]>pivot){
+            result[right--]=nums[j];
+        }
     }
-
-    let res = [];
-    for(let i of left) res.push(i);
-    for(let i of right) res.push(i);
-    return res;
+    while(left<=right) result[left++]=pivot;
+    return result;
 };
