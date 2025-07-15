@@ -5,7 +5,7 @@
 var plusOne = function(digits) {
     let s = "",res=[];
     for(let i of digits){
-        s+=i;
+        s=s+i;
     }
     let sum = BigInt(s)+1n;
     while(sum!=0n){
