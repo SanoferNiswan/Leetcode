@@ -1,13 +1,17 @@
-/**
- * @param {number} n
- * @return {number[]}
- */
+const hasZero = (num) => {
+    while(num!=0){
+        let r = num%10;
+        if(r==0) return true;
+        num=Math.floor(num/10);
+    }
+    return false;
+}
+
 var getNoZeroIntegers = function(n) {
-    let a = [];
     for(let i=1;i<=n/2;i++){
-        if(!i.toString().includes('0') && !(n-i).toString().includes('0')){
-            return [i,n-i]
+        if(!hasZero(i) && !hasZero(n-i)){
+            return [i,n-i];
         }
     }
-    return a;
+    return [-1,-1];
 };
