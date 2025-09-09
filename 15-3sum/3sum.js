@@ -11,12 +11,12 @@ var threeSum = function (nums) {
         let left = i + 1, right = nums.length - 1;
 
         while (left < right) {
-            let sum = nums[i] + nums[left] + nums[right];
+            let sum = nums[i] + nums[left] + nums[right]; // prevent duplicate triplet calc
             if (sum == 0) {
                 result.push([nums[i], nums[left], nums[right]]);
 
-                while (left < right && nums[left] == nums[left + 1]) left++;
-                while (left < right && nums[right] == nums[right - 1]) right--;
+                while (left < right && nums[left] == nums[left + 1]) left++;    // prevent duplicate triplet calc
+                while (left < right && nums[right] == nums[right - 1]) right--; // prevent duplicate triplet calc
 
                 left++;
                 right--;
