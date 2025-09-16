@@ -1,5 +1,5 @@
 var findRelativeRanks = function(score) {
-    let s = {},scores=JSON.parse(JSON.stringify(score)),res=[];
+    let s = {},scores=[...score],res=[];
     console.log(scores)
     score.sort((a,b)=>b-a);
     for(let i=0;i<score.length;i++){
