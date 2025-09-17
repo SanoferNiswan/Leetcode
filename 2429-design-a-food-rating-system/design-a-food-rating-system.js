@@ -1,5 +1,4 @@
 var FoodRatings = function(foods, cuisines, ratings) {
-    // local MaxHeap implementation inside constructor scope
     class MaxHeap {
         constructor() { this.data = []; }
         size() { return this.data.length; }
@@ -42,13 +41,13 @@ var FoodRatings = function(foods, cuisines, ratings) {
             }
         }
         _compare(a, b) {
-            if (a[0] !== b[0]) return a[0] - b[0]; // compare rating
-            return b[1].localeCompare(a[1]);       // smaller food name wins
+            if (a[0] !== b[0]) return a[0] - b[0];
+            return b[1].localeCompare(a[1]);
         }
     }
 
-    this.foodInfo = new Map();        // food -> {cuisine, rating}
-    this.cuisineHeaps = new Map();    // cuisine -> MaxHeap
+    this.foodInfo = new Map();
+    this.cuisineHeaps = new Map();
 
     for (let i = 0; i < foods.length; i++) {
         this.foodInfo.set(foods[i], { cuisine: cuisines[i], rating: ratings[i] });
@@ -62,7 +61,7 @@ var FoodRatings = function(foods, cuisines, ratings) {
 FoodRatings.prototype.changeRating = function(food, newRating) {
     let { cuisine } = this.foodInfo.get(food);
     this.foodInfo.set(food, { cuisine, rating: newRating });
-    this.cuisineHeaps.get(cuisine).push([newRating, food]); // lazy update
+    this.cuisineHeaps.get(cuisine).push([newRating, food]);
 };
 
 FoodRatings.prototype.highestRated = function(cuisine) {
@@ -70,7 +69,7 @@ FoodRatings.prototype.highestRated = function(cuisine) {
     while (heap.size() > 0) {
         let [rating, food] = heap.peek();
         if (this.foodInfo.get(food).rating !== rating) {
-            heap.pop(); // remove stale
+            heap.pop();
         } else {
             return food;
         }
