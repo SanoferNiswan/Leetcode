@@ -1,6 +1,6 @@
 var maxFrequencyElements = function(nums) {
     let map = new Map();
-    let max = 0;
+    let max = 0, res = 0;
     for(let i=0;i<nums.length;i++){
         if(map.has(nums[i])){
             let sum = map.get(nums[i])+1;
@@ -12,12 +12,7 @@ var maxFrequencyElements = function(nums) {
         }
     }
 
-    console.log(map);
-
-    let res = 0;
-
     for(let [key,value] of map){
-        console.log(map.get(key),max);
         if(map.get(key)==max){
             res+=value;
         }
