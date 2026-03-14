@@ -3,7 +3,6 @@ class Solution {
         Map<Integer,Integer> m = new HashMap<Integer,Integer>();
         for(int num:nums){
             m.put(num, m.getOrDefault(num,0)+1);
-            
         }
         int[] a = new int[m.size()];
         int i = 0;
