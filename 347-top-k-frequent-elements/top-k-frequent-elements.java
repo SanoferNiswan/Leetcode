@@ -12,12 +12,9 @@ class Solution {
             i++;
         }
         Arrays.sort(a);
-        for(int x:a) System.out.print(x+", ");
-        System.out.println(m);
         int[] res = new int[k];
         for(i=0;i<k;i++){
                 int count = a[a.length-1-i];
-                System.out.println("count:"+(i+1)+":"+count);
                 for(Map.Entry<Integer,Integer> entry : m.entrySet()){
                     if(entry.getValue()==count){
                         res[i] = entry.getKey();
