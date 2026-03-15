@@ -7,7 +7,6 @@ class Solution {
         pref[0]=nums[0];
         for(int i=1;i<nums.length;i++){
             pref[i]=nums[i]+pref[i-1];
-            System.out.print(i+":"+pref[i]+" ");
         }
 
         for(int i=0;i<nums.length;i++){
