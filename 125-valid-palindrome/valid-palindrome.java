@@ -8,7 +8,6 @@ class Solution {
         }
 
         int left =0, right=sb.length()-1;
-        System.out.println("str:"+sb);
         while(left<right){
             if(sb.charAt(left++)!=sb.charAt(right--)) return false;
         }
