@@ -5,8 +5,7 @@ class Solution {
         int count = 0, pref = 0;
         for(int i = 0 ; i < nums.length ; i++){
             pref+=nums[i];
-            int rem = pref - k;
-            if(m.containsKey(rem)) count+=m.get(rem);
+            if(m.containsKey(pref - k)) count+=m.get(pref - k);
 
             m.put(pref, m.getOrDefault(pref,0)+1); 
         }
