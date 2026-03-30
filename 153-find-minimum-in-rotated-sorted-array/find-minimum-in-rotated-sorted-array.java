@@ -4,7 +4,7 @@ class Solution {
 
         while(low < high){
             int mid = low + ( high - low ) / 2;
-            if(nums[mid]<=nums[high]) high = mid;
+            if(nums[mid]<nums[high]) high = mid;
             else low = mid+1;
         }
 
