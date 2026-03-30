@@ -2,9 +2,8 @@ class Solution {
     public int[] searchRange(int[] nums, int target) {
         int[] res = new int[2];
         res[0] = firstPosition(nums, target);
-        res[1] = lastPosition(nums, target);
-
         if(res[0] == nums.length || nums[res[0]]!= target) return new int[]{-1, -1};
+        res[1] = lastPosition(nums, target);
 
         return res;
     }
