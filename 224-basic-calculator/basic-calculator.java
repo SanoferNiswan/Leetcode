@@ -23,7 +23,6 @@ class Solution {
                 res*=st.pop();
                 res+=st.pop();
                 curr=0;
-                sign = 1;
             }
         }
 
