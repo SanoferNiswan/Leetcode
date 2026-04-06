@@ -12,7 +12,7 @@ class Solution {
                 if(sign=='+') st.push(num);
                 else if(sign=='-') st.push(-num);
                 else if(sign == '*') st.push(st.pop()*num);
-                else if(sign=='/') st.push(st.pop()/num);
+                else st.push(st.pop()/num);
 
                 sign = c;
                 num = 0;
