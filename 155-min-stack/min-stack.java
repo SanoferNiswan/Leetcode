@@ -10,7 +10,7 @@ class MinStack {
     }
     
     public void pop() {
-        if(!st.isEmpty() && s.peek().equals(st.peek())) st.pop();
+        if(s.peek().equals(st.peek())) st.pop();
         s.pop();
     }
     
