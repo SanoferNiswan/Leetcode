@@ -12,12 +12,10 @@ class Solution {
                 st.push(part);
             }
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder res = new StringBuilder();
 
-        for(String s:st){
-            sb.append('/'+s);
-        }
+        for(String s:st) res.append('/'+s);
 
-        return sb.length()==0 ? "/" : sb.toString();
+        return res.length()==0 ? "/" : res.toString();
     }
 }
