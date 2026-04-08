@@ -11,7 +11,7 @@ class Solution {
                 res[st.pop()] = nums[i%n];
             }
 
-            if(i < n) st.push(i);
+            if(i < n) st.push(i); // only during first pass we can mark not found data
         }
 
         return res;
