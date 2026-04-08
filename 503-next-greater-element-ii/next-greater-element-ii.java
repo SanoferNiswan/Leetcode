@@ -11,7 +11,7 @@ class Solution {
                 res[st.pop()] = nums[i%n];
             }
 
-            if(res[i%n]==-1) st.push(i%n);
+            if(i < n) st.push(i);
         }
 
         return res;
