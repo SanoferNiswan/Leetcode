@@ -11,7 +11,7 @@ class Solution {
 
                 int left = st.peek();
                 int right = i;
-                int width = right - left - 1;
+                int width = i - st.peek() - 1;
                 int h = Math.min(height[left], height[right]) - height[mid];
 
                 water+=h*width; 
