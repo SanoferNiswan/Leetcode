@@ -4,17 +4,21 @@ class Solution {
         ListNode header = head, tailor = head, prevTail = null;
         while(tailor!=null){
             count++;
-            if(count%k == 0){
+            if(count == k){
                 ListNode next = tailor.next;
                 ListNode temp = reverse(header, next);
+                
                 if(prevTail!=null){
                     prevTail.next = temp;
                 }else head = temp;
 
                 header.next = next;
                 prevTail = header;
+
                 header = next;
                 tailor = next;
+
+                count = 0;
             }else{
                 tailor = tailor.next;
             } 
