@@ -1,20 +1,41 @@
 class Solution {
     public Node copyRandomList(Node head) {
-        Map<Node, Node> m = new HashMap<Node, Node>();
+        // insert copied nodes in between original node
         Node curr = head;
-        while(curr != null){
-            m.put(curr, new Node(curr.val));
-            curr = curr.next;
+        while(curr!=null){
+            Node nn = new Node(curr.val);
+            Node next = curr.next;
+            curr.next = nn;
+            nn.next = next;
+
+            curr = next;
         }
 
+        // copy random pointer
         curr = head;
         while(curr!=null){
-            Node nn = m.get(curr);
-            nn.next = m.get(curr.next);
-            nn.random = m.get(curr.random);
-            curr = curr.next;
+            if(curr.random!=null){
+                curr.next.random = curr.random.next;
+            }
+            curr = curr.next.next;
         }
 
-        return m.get(head);
+        // separate lists
+        Node copyHead = new Node(0); // dummy node
+        Node copyCurr = copyHead;
+        curr = head;
+
+        while(curr!=null){
+            Node copy = curr.next;
+            Node next = copy.next;
+
+            copyCurr.next = copy;
+            curr.next = next;
+
+            copyCurr = copy;
+            curr = next;
+        }
+
+        return copyHead.next;
     }
 }
