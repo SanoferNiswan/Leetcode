@@ -7,7 +7,6 @@ class Solution {
         }
 
         ListNode second = reverse(slow);
-        slow.next = null;
         ListNode first = head;
 
         while(first!=null && second!=null){
