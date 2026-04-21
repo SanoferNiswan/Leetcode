@@ -1,18 +1,15 @@
 class Solution {
     public int leastInterval(char[] tasks, int n) {
-        // (maxFreq-1) * (n+1) + maxCount
+        int max = 0, maxCount =0;
         int freq[] = new int[26];
-        int maxFreq = 0,maxCount = 0;
         for(char c:tasks){
             freq[c-'A']++;
-            maxFreq = Math.max(maxFreq, freq[c-'A']);
+            max = Math.max(max, freq[c-'A']);
         }
+        for(int num:freq) if(num==max) maxCount++;
 
-        for(int num:freq){
-            if(num==maxFreq) maxCount++;
-        }
-        int slots = (maxFreq - 1) * (n + 1) + maxCount;
+        int slot = (max-1) * (n+1) + maxCount;
 
-        return Math.max(tasks.length, slots);
+        return Math.max(slot, tasks.length);
     }
 }
