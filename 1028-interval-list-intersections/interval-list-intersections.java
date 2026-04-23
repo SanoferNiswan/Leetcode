@@ -9,6 +9,8 @@ class Solution {
             int start = Math.max(a[0], b[0]);
             int end = Math.min(a[1],b[1]);
 
+            // if non overlap min(end) < max(start)
+
             if(start <= end){
                 res.add(new int[]{start, end});
             }
